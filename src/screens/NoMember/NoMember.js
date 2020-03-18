@@ -18,9 +18,31 @@ export class NoMember extends React.Component {
     return (
       <View key={index}>
         <Text style={{fontSize: 14}}>{item.title}</Text>
+        <Button
+          style={{ fontSize: 10 }}
+          title="View"
+          color="black"
+          onPress={this._navigateToProfileNoMember}
+        />
       </View>
     );
   };
+
+  _navigateToProfileNoMember = () => {
+    const { navigation } = this.props;
+    navigation.navigate('ProfileNoMember')
+  }
+
+  _navigateToMember = () => {
+    const { navigation } = this.props;
+    navigation.navigate('Memberi')
+  }
+
+  _navigateToNoMember = () => {
+    const { navigation } = this.props;
+    navigation.navigate('NoMemberi')
+  }
+
   render() {
     const { data } = this.state;
     const {onTapMember, onTapNoMember} = this.props;
@@ -30,12 +52,12 @@ export class NoMember extends React.Component {
           <Button
             title="Member"
             color="white"
-            onPress={onTapMember}
+            onPress={this._navigateToMember}
           />
           <Button
             title="No Member"
             color="white"
-            onPress={onTapNoMember}
+            onPress={this._navigateToNoMember}
           />
         </View>
         <Text style={styles.title}>No Member</Text>

@@ -1,13 +1,18 @@
 import * as React from 'react';
 import {Coordinator} from '../../navigators/utils/Coordinators';
 import Screens from '../';
+import { SelectRateCoordinators } from '../../navigators/utils/SelectRateCoordinators';
+import { Button, View } from 'react-native';
 
 export class SelectRate extends React.Component {
+  seletRateCoordinator = null;
   constructor(props) {
     super(props);
     this.state = {
       currentScreen: 'member',
     };
+    const {navigation} = this.props;
+    this.seletRateCoordinator = new SelectRateCoordinators(navigation)
   }
 
   _goToNoMember = () => {
@@ -17,18 +22,25 @@ export class SelectRate extends React.Component {
   };
 
   _goToMember = () => {
-    this.setState({
-      currentScreen: 'member',
-    });
+    this.seletRateCoordinator.start()
   };
 
   render() {
     const {currentScreen} = this.state;
     return (
-      <Coordinator {...{currentScreen}}>
-        <Screens.Member id="member" onTapMember={this._goToMember} onTapNoMember={this._goToNoMember}/>
-        <Screens.NonMember id="noMember" onTapMember={this._goToMember} onTapNoMember={this._goToNoMember} />
-      </Coordinator>
+      <>
+      <Button
+        title="Go Member"
+        color="green"
+        onPress={this._goToMember}
+      />
+        <Button
+          title="Go No Member"
+          color="blue"
+          onPress={this._goToNoMember}
+        />
+      </>
+
     );
   }
 }
