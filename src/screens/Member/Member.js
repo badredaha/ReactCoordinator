@@ -15,31 +15,28 @@ export class Member extends React.Component {
   }
 
   _renderItem = ({item, index}) => {
+    const { onTapOnBookingPayment } = this.props;
     return (
       <View key={index}>
         <Text style={{fontSize: 14}}>{item.title}</Text>
         <Button
-          style={{ fontSize: 10 }}
-          title="View"
-          color="black"
-          onPress={this._navigateToProfileMember}
+          title="Go To Booking Payment"
+          color="white"
+          onPress={this._onTapOnBookingPayment}
         />
       </View>
     );
   };
 
-  _navigateToProfileMember = () => {
+  _onTapOnBookingPayment = () => {
     const { navigation } = this.props;
-    navigation.navigate('ProfileMember')
+    navigation.navigate('BookingPayment')
   }
 
-  _navigateToNoMember = () => {
-    const { navigation } = this.props;
-    navigation.navigate('NoMemberi')
-  }
 
   render() {
     const {data} = this.state;
+    const {onTapMember, onTapNoMember} = this.props;
 
     return (
       <View style={styles.container}>
@@ -47,12 +44,12 @@ export class Member extends React.Component {
           <Button
             title="Member"
             color="white"
-            onPress={this._navigateToMember}
+            onPress={onTapMember}
           />
           <Button
             title="No Member"
             color="white"
-            onPress={this._navigateToNoMember}
+            onPress={onTapNoMember}
           />
         </View>
         <Text style={styles.title}>Member</Text>
