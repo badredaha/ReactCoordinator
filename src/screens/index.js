@@ -5,7 +5,8 @@ import ListResort from './ListResort';
 import Login from './Login';
 import NonMember from './NoMember';
 import Member from './Member';
-import SelectRate from './SelectRate';
+import SelectRateCoordinator from './SelectRateCoordinator';
+import BookingPayment from './BookingPayment';
 
 export default {
   Home,
@@ -13,7 +14,8 @@ export default {
   Settings,
   ListResort,
   Login,
-  SelectRate,
+  SelectRateCoordinator,
   Member,
   NonMember,
+  BookingPayment,
 };

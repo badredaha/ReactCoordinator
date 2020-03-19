@@ -5,7 +5,9 @@ import {styles} from './styles';
 export class Home extends React.Component {
   _navigateToSelectRate = () => {
     const {navigation} = this.props;
-    navigation.navigate('SelectRate');
+    navigation.navigate('SelectRateCoordinator');
+
+
   }
 
   render() {

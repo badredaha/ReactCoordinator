@@ -15,12 +15,24 @@ export class Member extends React.Component {
   }
 
   _renderItem = ({item, index}) => {
+    const { onTapOnBookingPayment } = this.props;
     return (
       <View key={index}>
         <Text style={{fontSize: 14}}>{item.title}</Text>
+        <Button
+          title="Go To Booking Payment"
+          color="white"
+          onPress={this._onTapOnBookingPayment}
+        />
       </View>
     );
   };
+
+  _onTapOnBookingPayment = () => {
+    const { navigation } = this.props;
+    navigation.navigate('BookingPayment')
+  }
+
 
   render() {
     const {data} = this.state;
