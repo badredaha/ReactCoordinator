@@ -5,7 +5,8 @@ import ListResort from './ListResort';
 import Login from './Login';
 import NonMember from './NoMember';
 import Member from './Member';
-import SelectRateCoordinator from './SelectRateCoordinator';
+import SelectRateView from './SelectRate'
+
 import BookingPayment from './BookingPayment';
 
 export default {
@@ -13,8 +14,8 @@ export default {
   Profile,
   Settings,
   ListResort,
+  SelectRateView,
   Login,
-  SelectRateCoordinator,
   Member,
   NonMember,
   BookingPayment,
