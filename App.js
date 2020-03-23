@@ -11,9 +11,7 @@ import AppContainer from './src/navigators';
 
 const App: () => React$Node = () => {
   return (
-    <>
-      <AppContainer />
-    </>
+    <AppContainer />
   );
 };
 
