@@ -1,13 +1,13 @@
 import * as React from 'react';
 import {View, Text, Button} from 'react-native';
 import {styles} from './styles';
+import { SelectRateCoordinator } from '../SelectRate/SelectRateCoordinator';
 
 export class Home extends React.Component {
   _navigateToSelectRate = () => {
     const {navigation} = this.props;
-    navigation.navigate('SelectRateCoordinator');
-
-
+    const selectRateCoordinator = new SelectRateCoordinator(navigation)
+    selectRateCoordinator.start()
   }
 
   render() {

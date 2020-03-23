@@ -3,6 +3,6 @@ import Screens from '../screens';
 
 export const HomeStack = createStackNavigator({
   Home: Screens.Home,
-  SelectRateCoordinator: Screens.SelectRateCoordinator,
+  SelectRateView: Screens.SelectRateView,
   BookingPayment:Screens.BookingPayment
 });
