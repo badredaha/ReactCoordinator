@@ -22,12 +22,8 @@ export class SelectRateView extends React.Component {
 
 
     return (
-      <View style={styles.container}>
-
-        <Screens.Member id={'member'}/>
-          
-        <Screens.Member id={'noMember'}/>
-         
+      <View>
+        <Screens.Member id={'member'} style={styles.container}/>
       </View>
     );
   }
